@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Car - GuiaDrift</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 添加 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 添加字体声明 -->
+    <style>
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/nourd_semi_bold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+    <!-- 添加网站图标 -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- 添加不同格式支援，增強兼容性 -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- 確保正確的MIME類型 -->
+    <meta name="msapplication-TileImage" content="logo.png">
+    <meta name="msapplication-TileColor" content="#2c563f">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="logo.png">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-i18n="nav_home">HOME</a></li>
+            <li><a href="index.html#about" data-i18n="nav_about">ABOUT</a></li>
+            <li><a href="car.html" class="active" data-i18n="nav_car">OUR CAR</a></li>
+            <li><a href="index.html#sponsors" data-i18n="nav_sponsors">SPONSORS</a></li>
+            <li><a href="index.html#contact" data-i18n="nav_contact">CONTACT</a></li>
+        </ul>
+        <div class="brand">
+            <div class="brand-name">GUIADRIFT</div>
+            <div class="logo">
+                <img src="logo.png" alt="Team Logo">
+            </div>
+        </div>
+    </nav>
+
+    <!-- 车辆介绍部分 - 修改为全屏展示 -->
+    <section id="car-hero" class="car-hero-section">
+        <div class="car-hero-image">
+            <img src="car_1.png" alt="GD-2 Racing Car Model">
+            <div class="car-hero-overlay"></div>
+        </div>
+        <div class="car-hero-content">
+            <h1 data-i18n="car_title">GD-2</h1>
+            <p data-i18n="car_subtitle">Advanced Design for F1 in Schools</p>
+        </div>
+    </section>
+
+    <!-- 车辆介绍部分 -->
+    <section id="model-view" class="apple-style">
+        <div class="feature-sections">
+            <div class="feature-section fade-in">
+                <div class="feature-content">
+                    <h3 data-i18n="aero_title">THE ART OF AERODYNAMICS</h3>
+                    <p class="large-text" data-i18n="aero_subtitle">Our most powerful<br>aerodynamic system ever.</p>
+                    <p class="detail-text" data-i18n="aero_desc">Featuring cutting-edge CFD-optimized body design that creates perfect downforce with minimal drag. Every curve is precisely calculated for peak performance on the 20-meter track.</p>
+                </div>
+                <div class="feature-image parallax">
+                    <img src="b83df4543f985e3e17b6cd1d72cf9392.png" alt="空气动力学设计">
+                </div>
+            </div>
+    
+            <div class="feature-section reverse fade-in">
+                <div class="feature-content">
+                    <h3>BODYWORK FLUID DYNAMICS DESIGN</h3>
+                    <p class="large-text">Meticulously optimized aerodynamic profile,<br>pursuing ultimate performance.</p>
+                    <p class="detail-text">Designed using advanced CFD technology, each curve is optimized through computational fluid dynamics simulation. The low-drag, high-downforce body contour provides excellent stability on the 20-meter track while maintaining minimal aerodynamic resistance for optimal acceleration performance. Specially designed side wings and diffusers work in harmony to create perfect airflow guidance.</p>
+                </div>
+                <div class="feature-image parallax">
+                    <img src="001199da1282f832c206c805e3e2d7da.png" alt="Bodywork Fluid Dynamics Design">
+                </div>
+            </div>
+    
+            <div class="feature-section fade-in">
+                <div class="feature-content">
+                    <h3>PRECISION MANUFACTURING</h3>
+                    <p class="large-text">Relentless pursuit of craftsmanship,<br>delivering exceptional performance.</p>
+                    <p class="detail-text">High-density model material crafted through precision CNC machining brings our design vision to life. Special surface treatment achieves the perfect balance of performance and aesthetics.</p>
+                </div>
+                <div class="feature-image parallax">
+                    <img src="9df6d0358a12d1590841c67cf946fa2e.png" alt="制造工艺">
+                </div>
+            </div>
+        </div>
+    
+        <div class="specifications fade-in">
+            <h3>SPECIFICATIONS</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <span class="spec-value counter">55</span>
+                    <span class="spec-unit">g</span>
+                    <span class="spec-label">CAR WEIGHT</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-value counter">1.1</span>
+                    <span class="spec-unit">s</span>
+                    <span class="spec-label">REACTION TIME</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-value counter">20</span>
+                    <span class="spec-unit">m</span>
+                    <span class="spec-label">TRACK LENGTH</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3D模型预览区域 -->
+        <div class="model-3d-section fade-in">
+            <h3>INTERACTIVE 3D MODEL</h3>
+            <p class="model-description">Experience our GD-2 car in full 3D. Rotate, zoom and explore every detail of our design.</p>
+            <div class="model-3d-container">
+                <iframe src="https://viewer.jig.space/?jig=mKlJEdr7&shad=1&step=1&sbox=1&autoload=1&autoplay=0" allow="fullscreen; xr-spatial-tracking;" allowfullscreen="" frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- 在specifications部分之后添加获奖记录部分 -->
+        <div class="awards-section fade-in">
+            <h3>AWARDS & RECOGNITION</h3>
+            <div class="award-container">
+                <div class="award-icon">🏆</div>
+                <div class="award-content">
+                    <h4>BEST ENGINEERED CAR</h4>
+                    <p class="award-event">F1 in Schools Hong Kong & Macau Open</p>
+                    <p class="award-desc">Recognized for outstanding engineering, innovative design solutions, and exceptional manufacturing quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2024 GUIADRIFT. ALL RIGHTS RESERVED</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="language.js"></script>
+    <script src="languageSwitch.js"></script>
+</body>
+</html> 

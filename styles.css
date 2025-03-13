@@ -1,0 +1,1779 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 80px; /* 根据导航栏高度调整 */
+}
+
+/* 确保所有文本元素使用 Nourd */
+h1, h2, h3, h4, h5, h6, p, a, span, div {
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600;
+}
+
+/* 导航栏样式更新 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2); /* 初始半透明背景 */
+    backdrop-filter: blur(5px); /* 初始模糊效果 */
+    transition: all 0.3s ease;
+}
+
+/* 当滚动时添加的类 */
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.9); /* 滚动时更深的背景色 */
+    backdrop-filter: blur(10px); /* 增加模糊效果 */
+}
+
+/* 品牌区域样式 */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    order: 2; /* 使用 order 属性将品牌区域移到右侧 */
+}
+
+.brand-name {
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600; /* Semi Bold */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px; /* 增大 logo 尺寸 */
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+/* 滚动时的样式调整 */
+.navbar.scrolled .logo img {
+    height: 50px;
+}
+
+/* 滚动时的品牌名称样式 */
+.navbar.scrolled .brand-name {
+    font-size: 1.8rem;
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600;
+}
+
+/* 导航栏链接样式更新 */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+    order: 1; /* 使用 order 属性将导航链接移到左侧 */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px; /* 圆角效果 */
+    transition: all 0.3s ease;
+    background: transparent;
+    font-family: 'Nourd', sans-serif;
+}
+
+.nav-links a:hover {
+    background: #f8a100; /* 悬停时的橙色背景 */
+    color: #000; /* 悬停时文字颜色改为黑色 */
+}
+
+/* 当前页面的活动状态 */
+.nav-links a.active {
+    background: #f8a100;
+    color: #000;
+}
+
+/* 主页横幅样式 */
+.hero {
+    margin-top: -80px;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    margin-bottom: 0; /* 移除底部間距 */
+}
+
+#about {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    /* 移除背景色，让图片完全显示 */
+    background-color: transparent;
+}
+
+.about-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0; /* 移除 margin */
+    max-width: none; /* 移除最大宽度限制 */
+}
+
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.4) 100%
+    ); /* 从左到右的渐变遮罩 */
+    z-index: 1;
+}
+
+.about-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.about-content {
+    position: absolute;
+    z-index: 2;
+    padding: 0 8%;
+    color: white;
+    max-width: 1200px;
+    text-align: left;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin: 0;
+}
+
+.about-content h2 {
+    font-size: 4rem;
+    margin-bottom: 3rem; /* 增加标题与文字之间的间距 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.team-info {
+    text-align: left;
+    max-width: 800px;
+    margin-top: 0; /* 确保没有顶部边距 */
+}
+
+.team-info p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 增强文字阴影以提高可读性 */
+    margin: 0;
+}
+
+.highlight {
+    color: #f8a100;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    padding-top: 35vh; /* 稍微降低整体位置 */
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+/* 内容包装器 */
+.content-wrapper {
+    text-align: left;
+    padding-left: 8%; /* 减小左侧空间 */
+    max-width: 90%; /* 增加内容宽度 */
+}
+
+/* 品牌标题样式 */
+.brand-title {
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600;
+    font-size: 5rem; /* 增大品牌名称字体 */
+    margin-bottom: 0.5rem; /* 减小下方间距 */
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* 标语样式调整 */
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1.5px;
+    text-align: left;
+    line-height: 1.3; /* 调整行高以优化换行显示 */
+}
+
+/* 副标题样式 */
+.hero-content p {
+    text-align: left;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* 视频遮罩效果调整 */
+.video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.7) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1; /* 确保在视频上层但在其他内容下层 */
+}
+
+/* 内容区域通用样式 */
+section {
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600;
+}
+
+/* 团队介绍样式 */
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.team-info img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+/* 赞助商部分样式优化 */
+.sponsors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.sponsor-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.sponsor-item img {
+    width: 100%;
+    max-width: 250px; /* 增大圖標的最大寬度 */
+    height: auto;
+    max-height: 140px; /* 增大圖標的最大高度 */
+    object-fit: contain;
+    filter: grayscale(0%); /* 移除灰度效果，讓標誌顯示原色 */
+    transition: filter 0.3s ease;
+}
+
+.sponsor-item:hover img {
+    filter: grayscale(0);
+}
+
+/* 联系方式样式 */
+.contact {
+    background-color: #f5f5f5;
+}
+
+.contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    padding: 0.5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #000;
+    color: #fff;
+}
+
+footer p {
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    /* 导航栏布局调整 */
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    /* 品牌名称和Logo的大小调整 */
+    .brand-name {
+        font-size: 1.5rem;
+    }
+    
+    .logo img {
+        height: 40px;
+    }
+    
+    /* 汉堡菜单显示和位置调整 */
+    .hamburger-menu {
+        display: block;
+        order: 1;
+        margin-right: 20px;
+    }
+    
+    /* 导航链接的样式调整 */
+    .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: calc(100vh - 80px);
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        left: 0;
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    /* 确保品牌区域在右侧显示 */
+    .brand {
+        margin-left: auto;
+        order: 2;
+    }
+
+    /* 漢堡菜單按鈕樣式 */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    /* 漢堡菜單動畫 */
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* 其他移動端樣式調整 */
+    .team-info {
+        flex-direction: column;
+    }
+    
+    .team-info img {
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .brand-title {
+        font-size: 3rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-text, .about-image {
+        width: 100%;
+    }
+
+    .scrolling-text {
+        font-size: 1.5rem;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+    }
+
+    .content-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .sponsors-grid {
+        grid-template-columns: 1fr;
+        padding: 20px 5%;
+    }
+    
+    .sponsor-item {
+        height: 150px;
+        padding: 30px;
+    }
+}
+
+/* 滚动文字容器 */
+.scrolling-text-container {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    background: #143e29; /* 只保留绿色背景 */
+    padding: 10px 0;
+    z-index: 2;
+}
+
+/* 滚动文字样式调整 */
+.scrolling-text {
+    white-space: nowrap;
+    display: inline-block;
+    animation: scrollText 20s linear infinite;
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Nourd', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-right: 50px;
+    word-spacing: 1rem; /* 减小词间距 */
+}
+
+/* 滚动动画 */
+@keyframes scrollText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* 当鼠标悬停时暂停动画 */
+.scrolling-text-container:hover .scrolling-text {
+    animation-play-state: paused;
+}
+
+/* 关于我们部分样式更新 */
+#about {
+    background-color: transparent !important; /* 强制覆盖旧的背景色 */
+    padding: 0 !important; /* 强制移除内边距 */
+}
+
+/* 右上角装饰线条 */
+#about::before {
+    display: none !important; /* 强制禁用装饰元素 */
+}
+
+/* 左下角赛车旗装饰 */
+#about::after {
+    display: none !important; /* 强制禁用装饰元素 */
+}
+
+.about-container {
+    display: block !important; /* 覆盖旧的 flex 布局 */
+}
+
+/* 完全移除关于我们页面的所有动画 */
+#about *,
+.about-container *,
+.about-background *,
+.about-content *,
+.team-info * {
+    animation: none !important;
+    -webkit-animation: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 保持about-content的垂直居中定位 */
+.about-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    -webkit-transform: translateY(-50%) !important;
+}
+
+/* 移除背景图片的所有动画效果 */
+.about-background img {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
+/* 移除渐变遮罩的过渡效果 */
+.about-background::after {
+    transition: none !important;
+}
+
+/* 确保没有任何JS添加的动画类能影响about部分 */
+#about [class*="fade"],
+#about [class*="slide"],
+#about [class*="animate"],
+#about [class*="motion"],
+#about [class*="transition"] {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.about-text {
+    flex: 1.2;
+    padding-top: 40px;
+}
+
+.about-text h2 {
+    display: none; /* 移除标题，因为设计中没有显示 */
+}
+
+.team-info p {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #f8a100;
+    font-weight: 600;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 500px; /* 限制最大寬度 */
+    margin: 0 auto; /* 居中顯示 */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    aspect-ratio: 16/9; /* 保持 16:9 的寬高比 */
+    object-fit: cover; /* 確保圖片填滿容器並保持比例 */
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    #about {
+        padding: 60px 5%;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-text {
+        padding-top: 0;
+    }
+
+    .team-info p {
+        font-size: 1.5rem;
+    }
+
+    .about-text, .about-image {
+        max-width: 100%;
+    }
+
+    .about-image {
+        order: -1;
+    }
+
+    #about::before,
+    #about::after {
+        display: none; /* 在移动端隐藏装饰元素 */
+    }
+
+    .about-content {
+        padding: 0 5%;
+    }
+
+    .about-content h2 {
+        font-size: 3rem;
+    }
+
+    .team-info p {
+        font-size: 1.2rem;
+    }
+}
+
+/* 3D模型展示区域样式 */
+#model-view {
+    background-color: #ffffff;
+    padding: 80px 8%;
+    text-align: center;
+}
+
+/* 3D Model View 部分样式 */
+.model-container {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+}
+
+.model-container {
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.model-container h2 {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.model-subtitle {
+    font-size: 28px;
+    color: #86868b;
+    margin-bottom: 60px;
+}
+
+.feature-sections {
+    padding: 100px 0;
+}
+
+.feature-section {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    gap: 60px;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-content h3 {
+    font-size: 24px;
+    color: #86868b;
+    margin-bottom: 20px;
+}
+
+.large-text {
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.detail-text {
+    font-size: 21px;
+    line-height: 1.5;
+    color: #86868b;
+}
+
+.feature-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.feature-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    transition: transform 0.8s ease;
+}
+
+/* 修改规格部分为30px圆角矩形 */
+.specifications {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #2c563f;
+    color: white;
+    margin-top: 80px;
+    text-align: center;
+    border-radius: 30px; /* 添加30px圆角 */
+    overflow: hidden; /* 确保内容不超出圆角边界 */
+    max-width: 1400px; /* 设置最大宽度 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.specifications h3 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 100%;
+    padding: 0 5%;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.spec-value {
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #f8a100;
+}
+
+.spec-unit {
+    font-size: 2.5rem;
+    color: #f8a100;
+    margin-bottom: 20px;
+}
+
+.spec-label {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* 动画效果 */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.parallax img {
+    transform: scale(1.1);
+    transition: transform 1.2s ease;
+}
+
+.parallax.visible img {
+    transform: scale(1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .feature-section {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+
+    .large-text {
+        font-size: 32px;
+    }
+
+    .detail-text {
+        font-size: 17px;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .spec-item {
+        padding: 20px 0;
+    }
+}
+
+.model-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.model-credit {
+    margin-top: 1.5rem;
+    font-family: 'Nourd', sans-serif;
+    font-size: 1rem;
+    color: #666;
+}
+
+.model-credit a {
+    color: #304de4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.model-credit a:hover {
+    color: #2c563f;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    #model-view {
+        padding: 60px 5%;
+    }
+
+    #model-view h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .model-credit {
+        font-size: 0.9rem;
+    }
+}
+
+/* 其他现有样式保持不变 */
+
+/* 添加模型图片样式 */
+.model-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    margin: 0 auto;
+    display: block;
+}
+
+/* 修改模型框架样式以允许图片完全填充 */
+.model-frame {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+    height: 600px; /* 固定高度或根据需要调整 */
+    position: relative;
+}
+
+/* 修改模型图片样式使其完全填充容器 */
+.model-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片填满整个区域 */
+    object-position: center; /* 图片居中 */
+    display: block;
+    border-radius: 0; /* 移除圆角 */
+    box-shadow: none; /* 移除阴影 */
+    margin: 0;
+}
+
+/* 调整模型标题位置，确保标题显示在图片上方 */
+.model-container h2,
+.model-subtitle {
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加文字阴影增加可读性 */
+    color: white; /* 确保文字颜色与背景对比 */
+}
+
+/* 团队介绍部分样式 */
+.team-section {
+    padding: 100px 8%;
+    background-color: #ffffff;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-subtitle {
+    font-size: 1.8rem;
+    color: #86868b;
+    margin-bottom: 60px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    color: #f8a100;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.member-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.team-philosophy {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.team-philosophy h3 {
+    font-size: 2.2rem;
+    color: #2c563f;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.team-philosophy p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #333;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* 確保在小螢幕上也有適當的填充 */
+@media (max-width: 768px) {
+    .team-philosophy {
+        padding: 25px 20px;
+    }
+    
+    .team-philosophy p {
+        font-size: 1rem;
+    }
+}
+
+/* 车辆英雄区样式 */
+.car-hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin-top: -80px; /* 抵消导航栏的padding-top */
+}
+
+.car-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.car-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.car-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4));
+}
+
+.car-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    width: 100%;
+}
+
+.car-hero-content h1 {
+    font-size: 8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.car-hero-content p {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .car-hero-content h1 {
+        font-size: 5rem;
+    }
+    
+    .car-hero-content p {
+        font-size: 1.5rem;
+    }
+}
+
+/* 禁用"关于我们"部分的任何打字机动画效果 */
+.team-info p,
+.about-content p,
+#about p {
+    animation: none !important;
+    -webkit-animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    width: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    border-right: none !important;
+}
+
+/* 移除任何可能存在的打字机光标 */
+.team-info p::after,
+.about-content p::after,
+#about p::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* 获奖记录部分样式 */
+.awards-section {
+    margin-top: 80px;
+    padding: 60px 8%;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-radius: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.awards-section h3 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #2c563f;
+}
+
+.award-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 800px;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.award-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.award-icon {
+    font-size: 5rem;
+    margin-right: 30px;
+    color: #f8a100;
+}
+
+.award-content {
+    text-align: left;
+}
+
+.award-content h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #2c563f;
+}
+
+.award-event {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #f8a100;
+}
+
+.award-desc {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .award-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .award-icon {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .award-content {
+        text-align: center;
+    }
+}
+
+/* 3D模型预览区域样式 */
+.model-3d-section {
+    margin: 80px auto;
+    padding: 60px 5%;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.model-3d-section h3 {
+    font-size: 2.5rem;
+    color: #2c563f;
+    margin-bottom: 20px;
+}
+
+.model-description {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.model-3d-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9宽高比 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+.model-3d-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .model-3d-section {
+        padding: 40px 5%;
+        margin: 60px auto;
+    }
+    
+    .model-3d-section h3 {
+        font-size: 2rem;
+    }
+    
+    .model-description {
+        font-size: 1rem;
+    }
+}
+
+/* 语言选择器样式 */
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    padding: 5px 8px;
+    position: relative;
+}
+
+.lang-btn:hover, .lang-btn.active {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.lang-btn.active::after {
+    content: '✓';
+    position: absolute;
+    right: -5px;
+    top: 2px;
+    font-size: 0.8rem;
+}
+
+.lang-divider {
+    color: white;
+    opacity: 0.5;
+    padding: 0 5px;
+}
+
+@media (max-width: 768px) {
+    .language-selector {
+        position: absolute;
+        top: 20px;
+        right: 20px; /* 调整右侧位置 */
+        background-color: rgba(0, 0, 0, 0.5); /* 添加半透明背景 */
+        padding: 5px 10px;
+        border-radius: 20px;
+        z-index: 1000; /* 确保显示在最上层 */
+    }
+    
+    /* 调整品牌图标在移动端的位置 */
+    .brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+    }
+    
+    /* 缩小汉堡菜单与语言选择器的间距 */
+    .hamburger-menu {
+        margin-right: 50px;
+    }
+    
+    /* 调整语言按钮在移动端的大小 */
+    .lang-btn {
+        font-size: 0.9rem;
+        padding: 3px 6px;
+    }
+}
+
+/* 团队页面中的奖项部分样式调整 */
+.team-awards {
+    margin-top: 60px !important; /* 使用!important确保覆盖其他样式 */
+    margin-bottom: 60px !important;
+    display: block !important;
+    max-width: 900px !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+}
+
+.team-container .award-container {
+    background-color: white !important;
+    display: flex !important;
+}
+
+/* 调试样式 - 添加明显的边框 */
+.team-awards {
+    border: 3px solid #f8a100 !important; 
+}
+
+/* 成员弹窗样式 */
+.member-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    animation: modalFadeIn 0.5s ease;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.close-modal {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    color: #2c563f;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.modal-photo {
+    flex: 0 0 40%;
+    background-color: #f8f8f8;
+}
+
+.modal-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-info {
+    flex: 0 0 60%;
+    padding: 40px;
+}
+
+.modal-info h2 {
+    color: #2c563f;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.modal-role {
+    color: #f8a100;
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.modal-bio {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.modal-interests h3, .modal-skills h3 {
+    color: #2c563f;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.modal-interests ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.modal-interests li {
+    background-color: #eef7f2;
+    color: #2c563f;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.skill-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-bar {
+    margin-bottom: 15px;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.skill-level {
+    width: 100%;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    position: relative;
+}
+
+.skill-level-fill {
+    position: absolute;
+    height: 100%;
+    background-color: #f8a100;
+    border-radius: 4px;
+}
+
+.view-profile-btn {
+    background-color: #2c563f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    background-color: #f8a100;
+    transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        flex-direction: column;
+    }
+    
+    .modal-photo {
+        flex: 0 0 300px;
+    }
+    
+    .skill-bars {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 添加社交媒体样式，替换掉技能条样式 */
+.social-links-member {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link-member {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    color: #2c563f;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.social-link-member:hover {
+    background-color: #2c563f;
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* 删除不需要的技能条样式 */
+.skill-bars, .skill-bar, .skill-name, .skill-level, .skill-level-fill {
+    /* 这些样式可以保留，以便保持CSS的一致性 */
+}
+
+/* 團隊顏色展示樣式 */
+.team-colors {
+    margin: 60px auto;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+.team-colors h3 {
+    font-size: 2.2rem;
+    color: #2c563f;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.team-colors > p {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.color-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.color-swatch {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 5px solid #f8f8f8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-item:hover .color-swatch {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.color-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.color-info p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .color-palette {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .color-item {
+        margin-bottom: 40px;
+    }
+}
+
+/* GD-2賽車預覽區塊樣式 */
+.car-preview-section {
+    padding: 100px 0;
+    background-color: #f8f8f8;
+    position: relative;
+    overflow: hidden;
+}
+
+.car-preview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 0 30px;
+}
+
+.car-preview-image {
+    flex: 1;
+    position: relative;
+}
+
+.car-preview-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    transform: perspective(1000px) rotateY(-15deg);
+    transition: all 0.5s ease;
+}
+
+.car-preview-image:hover img {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.car-preview-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.car-preview-content h2 {
+    font-size: 3rem;
+    color: #2c563f;
+    margin-bottom: 15px;
+}
+
+.car-preview-content p.fade-in {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.car-preview-subtitle {
+    font-size: 1.4rem !important;
+    color: #f8a100 !important;
+    margin-bottom: 30px !important;
+    font-weight: 600;
+}
+
+.car-preview-button {
+    display: inline-block;
+    background-color: #2c563f;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(44, 86, 63, 0.2);
+}
+
+.car-preview-button:hover {
+    background-color: #f8a100;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(248, 161, 0, 0.3);
+}
+
+/* 響應式設計 */
+@media (max-width: 992px) {
+    .car-preview-container {
+        flex-direction: column;
+    }
+    
+    .car-preview-image {
+        width: 100%;
+    }
+    
+    .car-preview-content {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .car-preview-image img {
+        transform: none;
+    }
+}

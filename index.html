@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuiaDrift</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 添加 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 添加在其他 head 内容之前 -->
+    <link rel="stylesheet" href="https://use.typekit.net/[你的kit代码].css">
+    <!-- 添加字体声明 -->
+    <style>
+        @font-face {
+            font-family: 'Nourd';
+            src: url('fonts/nourd_semi_bold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
+    <!-- 添加网站图标 -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <!-- 为不同设备添加不同尺寸的图标 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="logo.png">
+    <!-- 在head部分添加Font Awesome图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 主页横幅（包含导航栏） -->
+    <section id="home" class="hero">
+        <div class="video-container">
+            <video autoplay muted loop playsinline>
+                <source src="background.mp4" type="video/mp4">
+                <!-- 如果视频无法加载，显示后备图片 -->
+                <img src="fallback-image.jpg" alt="Team Promotional Image">
+            </video>
+        </div>
+        <!-- 导航栏移到这里 -->
+        <nav class="navbar">
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active" data-i18n="nav_home">HOME</a></li>
+                <li><a href="#about" data-i18n="nav_about">ABOUT</a></li>
+                <li><a href="car.html" data-i18n="nav_car">OUR CAR</a></li>
+                <li><a href="#sponsors" data-i18n="nav_sponsors">SPONSORS</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">CONTACT</a></li>
+            </ul>
+            <div class="brand">
+                <div class="brand-name">GUIADRIFT</div>
+                <div class="logo">
+                    <img src="logo.png" alt="Team Logo">
+                </div>
+            </div>
+            <div class="language-selector">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" data-lang="zh">中</button>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <div class="content-wrapper">
+                <div class="brand-title">GUIADRIFT</div>
+                <h1 data-i18n="slogan">RACE TO SHINE,<br>DRIVE TO WIN</h1>
+                <p data-i18n="subtitle">PROFESSIONAL RACING TEAM</p>
+            </div>
+        </div>
+        <!-- 添加滚动文字 -->
+        <div class="scrolling-text-container">
+            <div class="scrolling-text">
+                GUIADRIFT GUIADRIFT GUIADRIFT GUIADRIFT GUIADRIFT 
+                GUIADRIFT GUIADRIFT GUIADRIFT GUIADRIFT GUIADRIFT
+            </div>
+        </div>
+    </section>
+
+    <!-- 团队介绍 -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-background">
+                <img src="9430baaebd1c2b9f07c70c233d21c8fd.png" alt="GuiaDrift Racing Car">
+            </div>
+            <div class="about-content">
+                <h2 data-i18n="about_title">ABOUT US</h2>
+                <div class="team-info">
+                    <p data-i18n="about_content">We, <span class="highlight">GuiaDrift</span>, are a team from Macau participating in F1 in schools competition. We strive to design a vehicle that embodies the unique characteristics of Guia in Macau, integrating innovative features while reflecting our core values.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 在about部分後添加GD-2賽車區塊 -->
+    <section id="car-preview" class="car-preview-section">
+        <div class="car-preview-container">
+            <div class="car-preview-image">
+                <img src="car_1.png" alt="GD-2 Racing Car">
+            </div>
+            <div class="car-preview-content">
+                <h2 class="fade-in" data-i18n="car_preview_title">GD-2 RACING CAR</h2>
+                <p class="fade-in" data-i18n="car_preview_subtitle">Advanced aerodynamics meets precision engineering</p>
+                <div class="car-preview-text fade-in">
+                    <p data-i18n="car_preview_desc">Our flagship GD-2 racing car represents the pinnacle of our team's engineering expertise. Designed using advanced CFD simulation and manufactured with precision CNC machining, this car embodies our commitment to innovation and performance excellence.</p>
+                </div>
+                <a href="car.html" class="car-preview-button fade-in" data-i18n="car_preview_button">EXPLORE OUR CAR</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 在team-philosophy之后添加获奖经历部分 -->
+    <section id="team-intro" class="team-section">
+        <div class="team-container">
+            <h2 class="fade-in" data-i18n="team_title">OUR TEAM</h2>
+            <p class="team-subtitle fade-in" data-i18n="team_subtitle">Meet the passionate minds behind GuiaDrift</p>
+            
+            <div class="team-grid">
+                <div class="team-member fade-in" data-member="jack">
+                    <div class="member-photo">
+                        <img src="IMG_0511.jpg" alt="Jack Liu">
+                    </div>
+                    <h3>Jack Liu</h3>
+                    <p class="member-role" data-i18n="role_manager">Team Manager</p>
+                    <p class="member-desc" data-i18n="manager_desc">Responsible for overall team coordination, project management, and ensuring all aspects of the competition are handled efficiently.</p>
+                    <button class="view-profile-btn" data-i18n="view_profile">View Profile</button>
+                </div>
+                
+                <div class="team-member fade-in" data-member="roy">
+                    <div class="member-photo">
+                        <img src="0AF50169-D808-4992-B3E8-B109DB97DFAA_1_102_o.jpg" alt="Roy Fong">
+                    </div>
+                    <h3>Roy Fong</h3>
+                    <p class="member-role" data-i18n="role_design">Design Engineer</p>
+                    <p class="member-desc" data-i18n="design_desc">Leads the car design process using CAD software and fluid dynamics simulations to create the most aerodynamic design possible.</p>
+                    <button class="view-profile-btn" data-i18n="view_profile">View Profile</button>
+                </div>
+                
+                <div class="team-member fade-in" data-member="mark">
+                    <div class="member-photo">
+                        <img src="IMG_0514.jpg" alt="Mark Kuok">
+                    </div>
+                    <h3>Mark Kuok</h3>
+                    <p class="member-role" data-i18n="role_manufacturing">Manufacturing Engineer</p>
+                    <p class="member-desc" data-i18n="manufacturing_desc">Oversees the car manufacturing process, ensuring high precision in CNC machining and finishing to meet competition standards.</p>
+                    <button class="view-profile-btn" data-i18n="view_profile">View Profile</button>
+                </div>
+            </div>
+            
+            <div class="team-philosophy fade-in">
+                <h3 data-i18n="philosophy_title">OUR PHILOSOPHY</h3>
+                <p data-i18n="philosophy_p1">At GuiaDrift, we believe in pushing boundaries through innovation, teamwork, and dedication. Our diverse team brings together unique skills and perspectives, united by our passion for engineering and racing excellence.</p>
+                <p data-i18n="philosophy_p2">Inspired by Macau's racing heritage, we strive to create designs that embody both our cultural identity and cutting-edge technology. Every decision we make is driven by our commitment to performance, precision, and sustainability.</p>
+            </div>
+            
+            <!-- 在團隊理念之後，獎項部分之前添加團隊顏色展示 -->
+            <div class="team-colors fade-in">
+                <h3 data-i18n="team_colors_title">OUR TEAM COLORS</h3>
+                <p data-i18n="team_colors_desc">Our team colors represent our core values and racing heritage.</p>
+                
+                <div class="color-palette">
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #2c563f;"></div>
+                        <div class="color-info">
+                            <h4>Racing Green</h4>
+                            <p data-i18n="color_green_desc">Symbolizes precision, elegance and our commitment to sustainability.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #ef9442;"></div>
+                        <div class="color-info">
+                            <h4>Velocity Orange</h4>
+                            <p data-i18n="color_orange_desc">Represents speed, innovation and the energy that drives our team forward.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="color-item">
+                        <div class="color-swatch" style="background-color: #ffffff;"></div>
+                        <div class="color-info">
+                            <h4>Pure White</h4>
+                            <p data-i18n="color_white_desc">Reflects clarity of vision, perfection in design and the blank canvas of possibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 在这里添加奖项部分 -->
+            <div class="awards-section fade-in team-awards">
+                <h3 data-i18n="team_awards_title">AWARDS & ACHIEVEMENTS</h3>
+                <div class="award-container">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-content">
+                        <h4 data-i18n="team_award_name">BEST ENGINEERED CAR</h4>
+                        <p class="award-event" data-i18n="team_award_event">F1 in Schools Hong Kong & Macau Open</p>
+                        <p class="award-desc" data-i18n="team_award_desc">Our team was recognized for outstanding engineering, innovative design solutions, and exceptional manufacturing quality in the regional competition.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赞助商 -->
+    <section id="sponsors">
+        <h2 data-i18n="sponsors_title">OUR SPONSORS</h2>
+        <div class="sponsors-grid">
+            <div class="sponsor-item">
+                <img src="BNU.jpg" alt="Sponsor 1">
+            </div>
+            <div class="sponsor-item">
+                <img src="omoon.jpg" alt="Sponsor 2">
+            </div>
+            <div class="sponsor-item">
+                <img src="YST.png" alt="Sponsor 3">
+            </div>
+            <div class="sponsor-item">
+                <img src="desdj_msc_galaxyent.png" alt="Sponsor 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact">
+        <h2 data-i18n="contact_title">CONTACT US</h2>
+        <div class="contact-info">
+            <p data-i18n="email">Email: guiadrift@gmail.com</p>
+            <p data-i18n="phone">Phone: +852 5614 3320</p>
+        </div>
+        <div class="social-links">
+            <a href="http://instagram.com/guiadrift/" class="social-icon">Instagram</a>
+            <a href="https://www.youtube.com/channel/UC1nRhV3N8zE49IwV-PEnXUg" class="social-icon">YouTube</a>
+            <a href="https://www.threads.net/@guiadrift" class="social-icon">Threads</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p data-i18n="footer">&copy; 2025 GUIADRIFT. ALL RIGHTS RESERVED</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="language.js"></script>
+    <script src="languageSwitch.js"></script>
+
+    <!-- 在body结束标签前添加成员详情弹窗 -->
+    <div class="member-modal" id="memberModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-photo">
+                <img id="modalPhoto" src="" alt="Team Member">
+            </div>
+            <div class="modal-info">
+                <h2 id="modalName"></h2>
+                <p class="modal-role" id="modalRole"></p>
+                <div class="modal-bio" id="modalBio"></div>
+                <div class="modal-interests">
+                    <h3 data-i18n="interests_title">Interests & Hobbies</h3>
+                    <ul id="modalInterests"></ul>
+                </div>
+                <div class="modal-social">
+                    <h3 data-i18n="social_media_title">Social Media</h3>
+                    <div class="social-links-member" id="modalSocial"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
